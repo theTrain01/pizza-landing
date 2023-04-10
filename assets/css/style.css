@@ -1,0 +1,1546 @@
+/* Указываем box sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Убираем внутренние отступы */
+ul[class],
+ol[class] {
+  padding: 0;
+}
+
+/* Убираем внешние отступы */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Выставляем основные настройки по-умолчанию для body */
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* Удаляем стандартную стилизацию для всех ul и il, у которых есть атрибут class*/
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+/* Элементы a, у которых нет класса, сбрасываем до дефолтных стилей */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Упрощаем работу с изображениями */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Указываем понятную периодичность в потоке данных у article*/
+article > * + * {
+  margin-top: 1em;
+}
+
+/* Наследуем шрифты для инпутов и кнопок */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Удаляем все анимации и переходы для людей, которые предпочитай их не использовать */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url(../fonts/Montserrat-VariableFont_wght.ttf);
+}
+
+@font-face {
+    font-family: 'MontserratB';
+    src: url(../fonts/Montserrat-Bold.ttff);
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url(../fonts/Roboto-Regular.ttf);
+}
+
+.wrap_head {
+    min-height: 140px;
+    background: #1D0800;
+}
+
+.header_wrapper {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.blocks_head {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    position: relative;
+
+    padding-top: 57px;
+}
+
+.nav_link {
+    font-family:'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 17.8805px;
+    line-height: 109.5%;
+    text-decoration: none;
+    margin-right: 80px;
+
+    color: #A3A3A3;
+    position: relative;
+    transition: .2s ease-in-out;
+}
+
+.nav_link:hover::before {
+    opacity: 1;
+} 
+
+.nav_link:hover {
+    color:#FF6432;
+}
+
+.nav_link::before {
+    content: '';
+    display: block;
+
+    width: 6px;
+    height: 6px;
+
+    position: absolute;
+    left: 45%;
+    top: 130%;
+    
+    opacity: 0;
+
+    background: linear-gradient(261.69deg, #FF6432 12.12%, #FFA228 86.72%);
+    border-radius: 6px;
+    transition: .2s ease-in-out;
+}
+
+.nav_link:last-child {
+    margin-right: 0;
+}
+
+.block_login {
+    display: flex;
+}
+
+.log_btn_head {
+    width: 163px;
+    height: 40px;
+    
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 17.74px;
+    line-height: 109.5%;
+
+    color: #FFFFFF;
+    
+    padding: 10px 56px;
+    margin: 0 25px 0 0;
+    
+    background: linear-gradient(261.69deg, #FF5D29 12.12%, #FE9C1C 86.72%);
+    border-radius: 700px 675px 700px 700px;
+}
+
+.delivery {
+    min-height: 100vh;
+    background: #1D0800;
+}
+
+.wrapper_delivery {
+    width: 80%;
+    margin: 0 auto;
+    padding-top: 50px;
+    
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.text_container_delivery {
+    position: relative;
+}
+
+.text_container_delivery::before  {
+    content: '';
+    display: block;
+
+    width: 523px;
+    height: 159px;
+
+    position: absolute;
+    left: 65px;
+    top: -55px;
+
+    background: url(../images/svg/pizza_text_bg.svg) no-repeat;
+}
+
+.title_delivery {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 69.1697px;
+    line-height: 109.5%;
+
+    color: #FFFFFF;
+    position: relative;
+}
+
+.title_delivery::before {
+    content: '';
+    display: block;
+    
+    width: 105px;
+    height: 37px;
+    
+    position: absolute;
+    left: 375px;
+    top: 35px;
+    
+    background: url(../images/svg/vector_fast.svg) no-repeat;
+}
+
+.block_subtitle {
+    display: flex;
+    align-items: flex-end;
+}
+
+.subtitle_delivery, 
+.subtitle2_delivery {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 69.1697px;
+    line-height: 109.5%;
+
+    color: #FFFFFF;
+}
+
+.item_light_icon {
+    margin: 0 20px 0 20px;
+}
+
+.block_desc {
+    margin-top: 37px;
+}
+
+.description_delivery {
+    max-width: 411px;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 19.5621px;
+    line-height: 30px;
+
+    color: #A3A3A3;
+}
+
+.description_delivery span {
+    color: #ffffff;
+}
+
+.block_cooking_delivery {
+    margin: 23px 0 23px 0;
+}
+
+.title_cooking_delivery {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 19.5621px;
+    line-height: 136%;
+   
+    color: #A3A3A3;
+}
+
+.item_cooking_del {
+    margin-left: -30px;
+}
+
+.block_btn_order_delivery {
+    position: relative;
+}
+
+.block_btn_order_delivery::before {
+    content: '';
+    display: block;
+    
+    width: 148px;
+    height: 147px;
+    
+    position: absolute;
+    left: 430px;
+    top: 20px;
+    
+    background: url(../images/svg/vector_foot.svg) no-repeat;
+}
+
+.btn_delivery_big {
+    width: 388px;
+    height: 62px;
+
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+
+    
+    border: 2px solid #ea8b10;
+    border-radius: 100px;
+}
+
+.btn_order {
+    width: 229px;
+    height: 100%;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 22.4388px;
+    line-height: 123.5%;
+
+    padding: 17px 72px;
+    
+    cursor: pointer;
+
+    color: #FFFFFF;
+
+    background: linear-gradient(261.48deg, #FE9C1C -17.13%, #FF5E2A 86.76%);
+    border-radius: 100px;
+}
+
+.btn_pizza_menu {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18.8053px;
+    line-height: 123.5%;
+
+    padding-left: 20px;
+    cursor: pointer;
+
+    background: linear-gradient(261.69deg, #FF6432 12.12%, #FFA228 86.72%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.images_content_delivery {
+    position: relative;
+    z-index: 3;
+}
+
+.images_content_delivery::before {
+    content: '';
+    display: block;
+   
+    width: 523px;
+    height: 159px;
+    
+    position: absolute;
+    left: 25px;
+    top: -80px;
+    
+    background: url(../images/svg/pizza_text_bg.svg) no-repeat;
+}
+
+.images_content_delivery::after {
+    content: '';
+    display: block;
+    
+    width: 523px;
+    height: 159px;
+    
+    position: absolute;
+    left: -165px;
+    bottom: 10px;
+    z-index: -3;
+    
+    background: url(../images/svg/pizza_text_bg.svg) no-repeat;
+}
+
+
+.block_images_pizza_delivery {
+    position: relative;
+}
+
+.block_images_pizza_delivery::before {
+    content: '';
+    display: block;
+
+    width: 251px;
+    height: 251px;
+
+    position: absolute;
+    left: 330px;
+    top: -100px;
+
+    background: url(../images/svg/pizza_icon.svg) no-repeat;
+}
+
+.block_images_pizza_delivery::after {
+    content: '';
+    display: block;
+   
+    width: 309px;
+    height: 310px;
+    
+    position: absolute;
+    left: -135px;
+    bottom: -80px;
+   
+    background: url(../images/svg/fries-icon.svg) no-repeat;
+}
+
+.menu {
+    min-height: 100vh;
+    background: #1D0800; 
+}
+
+.menu_wrapper {
+    width: 80%;
+    margin: 0 auto;
+    padding-top: 20px;
+}
+
+.title_menu {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 69.1697px;
+    line-height: 109.5%;
+
+    text-align: center;
+
+    color: #FFFFFF;
+}
+
+.btn_menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    margin-top: 50px;
+}
+
+.menu_btn_item {
+    width: 229px;
+    height: 62px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    cursor: pointer;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 109.5%;
+
+    position: relative;
+    z-index: 2;
+
+    color: #FFFFFF;
+
+    background: #210A01;
+    box-shadow: 0px 9px 40px rgba(255, 107, 0, 0.06);
+    border-radius: 100px;
+    transition: .2s ease;
+}
+
+.menu_btn_item::before {
+    content: "";
+    display: block;
+
+    width: 100%;
+    height: 100%;
+    
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -2;
+
+    opacity: 0;
+
+    border-radius: 100px;
+    background: linear-gradient(261.69deg, #FF5924 12.12%, #FFA229 86.72%);
+    transition: .2s ease-in-out;
+}
+
+.menu_btn_item:hover::before {
+    opacity: 1;
+    transition: .2s ease-in-out;
+}
+
+.blocks_card_menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    
+    margin-top: 130px;
+    
+    position: relative;
+}
+
+.blocks_card_menu::before {
+    content: '';
+    display: block;
+    
+    width: 473px;
+    height: 152px;
+   
+    position: absolute;
+    left: -100px;
+    top: -120px;
+    
+    background: url(../images/svg/menu_text_bg.svg) no-repeat;
+}
+
+.blocks_card_menu::after {
+    content: "";
+    display: block;
+   
+    width: 473px;
+    height: 152px;
+   
+    position: absolute;
+    right: -105px;
+    bottom: -15px;
+    background: url(../images/svg/menu_text_bg.svg) no-repeat;
+}
+
+.block_card_menu {
+    width: 297px;
+    min-height: 459px;
+
+    margin-bottom: 68px;
+    margin-right: 20px;
+
+    background: #210A01;
+    border-radius: 30px;
+
+    position: relative;
+    z-index: 6;
+}
+
+.block_card_menu::before {
+    content: '';
+    display: block;
+    
+    width: 210px;
+    height: 207px;
+    
+    position: absolute;
+    left: 45px;
+    top: -100px;
+    z-index: -6;
+   
+    background: url(../images/png/pizza_card_icon.png) no-repeat;
+}
+
+.block_card_menu:nth-child(2):before {
+    content: '';
+    display: block;
+    
+    width: 210px;
+    height: 207px;
+    
+    position: absolute;
+    left: 45px;
+    top: -100px;
+    z-index: -6;
+   
+    background: url(../images/png/pizza1_card_icon.png) no-repeat;
+}
+
+.block_card_menu:nth-child(3):before {
+    content: '';
+    display: block;
+    
+    width: 210px;
+    height: 207px;
+    
+    position: absolute;
+    left: 45px;
+    top: -100px;
+    z-index: -6;
+   
+    background: url(../images/png/pizza2_card_icon.png) no-repeat;
+}
+
+.block_card_menu:nth-child(4):before {
+    content: '';
+    display: block;
+    
+    width: 210px;
+    height: 207px;
+    
+    position: absolute;
+    left: 45px;
+    top: -100px;
+    z-index: -6;
+   
+    background: url(../images/png/pizza3_card_icon.png) no-repeat;
+}
+
+.text_card_menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 120px;
+    margin-bottom: 20px;
+}
+
+.name_pizza {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 25.1018px;
+    line-height: 109.5%;
+
+    color: #FFFFFF;
+}
+
+.description_pizza {
+    max-width: 229px;
+    
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14.3197px;
+    line-height: 109.5%;
+    
+    margin-top: 20px;
+
+    color: #A3A3A3;
+}
+
+.circle_btns_card_menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.btn_circle_num {
+    width: 40px;
+    height: 40px;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14.3197px;
+    line-height: 109.5%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    cursor: pointer;
+
+    margin-right: 37px;
+    position: relative;
+    z-index: 8;
+
+    color: #A3A3A3;
+
+    border: solid 1px #A3A3A3;
+    border-radius: 40px;
+    transition: .2s ease;
+}
+
+.btn_circle_num:last-child {
+    margin-right: 0;
+}
+
+.btn_circle_num::before {
+    content: '';
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -8;
+
+    opacity: 0;
+
+    background: linear-gradient(261.69deg, #FF5924 12.12%, #FFA229 86.72%);
+    border-radius: 84.374px;
+    transition: .2s ease;
+}
+
+.btn_circle_num:hover::before {
+    border: 0; 
+    opacity: 1;
+    transition: .2s ease;
+}
+
+.btn_circle_num:hover {
+    color: #ffffff;
+    border: 0;
+}
+
+.more_btn_cont {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.btn_ingre {
+    width: 194px;
+    height: 39px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16.0839px;
+    line-height: 109.5%;
+    
+    cursor: pointer;
+
+    color: #ffffff;
+    position: relative;
+    z-index: 7;
+
+    border-radius: 100px;
+}
+
+.btn_ingre::before {
+    content: '';
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -7;
+
+    background: linear-gradient(261.69deg, #FF5924 12.12%, #FFA229 86.72%);
+    border-radius: 84.374px;
+}
+
+.price_pizza_content {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.price_pizz {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 25.4553px;
+    line-height: 109.5%;
+    position: relative;
+ 
+    color: #FFFFFF;
+}
+
+.price_pizz span {
+    font-family: 'Roboto';
+    font-size: 16.9702px;
+
+    position: absolute;
+    left: 50px;
+    top: -5px;
+}
+
+.quantity_pizz {
+    display: flex;
+}
+
+.qualt_piz {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 22.8198px;
+    line-height: 109.5%;
+    padding: 0 13px;
+
+    color: #A3A3A3;
+}
+
+.btn_qalt {
+    width: 23px;
+    height: 23px;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17.6642px;
+    line-height: 109.5%;
+
+    cursor: pointer;
+
+    color: #A3A3A3;
+    position: relative;
+    z-index: 4;
+
+    border: 1px solid #A3A3A3;
+    border-radius: 23px;
+    transition: .2s ease;
+}
+
+._qualt {
+    font-size: 17px;
+}
+
+.btn_qalt::before {
+    content: '';
+    display: block;
+
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -4;
+    
+    border-radius: 23px;
+    background: linear-gradient(261.69deg, #FF5924 12.12%, #FFA229 86.72%);
+}
+
+.btn_qalt:hover::before {
+    opacity: 1;
+    transition: .2s ease;
+}
+
+.btn_qalt:hover {
+    color: #ffffff;
+    border: 0;
+}
+
+.order_content_card_foot {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 35px;
+}
+
+.order_btn_card_foot {
+    width: 194px;
+    height: 45px;
+
+    cursor: pointer;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 17.451px;
+    line-height: 109.5%;
+
+    color: #FFFFFF;
+
+    background: linear-gradient(261.69deg, #FF5924 12.12%, #FFA229 86.72%);
+    box-shadow: 0px 7.59366px 33.7496px rgba(255, 107, 0, 0.06);
+    border-radius: 84.374px;
+}
+
+.most_banner {
+    min-height: 35vh;
+    background: #1D0800;
+}
+
+.most_wrapper {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.content_banner_images {
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.menuOther {
+    min-height: 80vh;
+    background: #1D0800;
+}
+
+.block2_card_menu {
+    width: 297px;
+    min-height: 459px;
+
+    margin-bottom: 68px;
+    margin-right: 20px;
+
+    background: #210A01;
+    border-radius: 30px;
+
+    position: relative;
+    z-index: 6;
+}
+
+.block2_card_menu::before {
+    content: '';
+    display: block;
+    
+    width: 210px;
+    height: 207px;
+    
+    position: absolute;
+    left: 45px;
+    top: -100px;
+    z-index: -6;
+   
+    background: url(../images/png/pizza4_card_icon.png) no-repeat;
+}
+
+.block2_card_menu:nth-child(2):before {
+    content: '';
+    display: block;
+    
+    width: 210px;
+    height: 207px;
+    
+    position: absolute;
+    left: 45px;
+    top: -100px;
+    z-index: -6;
+   
+    background: url(../images/png/pizza5_card_icon.png) no-repeat;
+}
+
+.block2_card_menu:nth-child(3):before {
+    content: '';
+    display: block;
+    
+    width: 210px;
+    height: 207px;
+    
+    position: absolute;
+    left: 45px;
+    top: -100px;
+    z-index: -6;
+   
+    background: url(../images/png/pizza6_card_icon.png) no-repeat;
+}
+
+.block2_card_menu:nth-child(4):before {
+    content: '';
+    display: block;
+    
+    width: 210px;
+    height: 207px;
+    
+    position: absolute;
+    left: 45px;
+    top: -100px;
+    z-index: -6;
+   
+    background: url(../images/png/pizza7_card_icon.png) no-repeat;
+}
+
+.text2_card_menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 120px;
+    margin-bottom: 20px;
+}
+
+.events {
+    min-height: 100vh;
+    background: #1D0800;
+}
+
+.events_wrapper {
+    width: 75%;
+    margin: 0 auto;
+}
+
+.item_block_icon_event {
+    margin-top: 30px;
+    position: relative;
+}
+
+.text_content_events {
+    margin-top: 30px;
+}
+
+.block_event_inner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: space-between;
+
+    position: relative;
+}
+
+.block_event_inner::before {
+    content: '';
+    display: block;
+    
+    width: 496px;
+    height: 157px;
+    
+    position: absolute;
+    left: -105px;
+    top: -90px;
+    
+    background: url(../images/svg/events_text_bg.svg) no-repeat;
+}
+
+.how_title {
+    max-width: 171px;
+   
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 25.0926px;
+    line-height: 108.5%;
+   
+    position: absolute;
+    left: 30px;
+    top: 80px;
+   
+    color: #FFFFFF;
+}
+
+.btn_how {
+    width: 204px;
+    height: 38px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    cursor: pointer;
+
+    position: absolute;
+    left: 30px;
+    bottom: 35px;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15.3846px;
+    line-height: 108.5%;
+
+    color: #FFFFFF;
+
+    background: linear-gradient(261.69deg, #FF5D29 12.12%, #FE9C1C 86.72%);
+    border-radius: 32px;
+}
+
+.title_event_block {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 69.1697px;
+    line-height: 109.5%;
+    text-align: end;
+ 
+    color: #FFFFFF;
+}
+
+.subtitle_event_block {
+    max-width: 427px;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 19.5621px;
+    line-height: 27px;
+    text-align: right;
+
+    color: #A3A3A3;
+}
+
+.box_images_eat {
+    margin-top: 30px;
+}
+
+.eat_price_wrap {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    position: relative;
+    z-index: 10;
+}
+
+.box_images_eat {
+    position: relative;
+}
+
+.box_images_eat:nth-child(1)::before {
+    content: '';
+    display: block;
+
+    width: 218px;
+    height: 218px;
+
+    position: absolute;
+    left: -145px;
+    top: -155px;
+    z-index: 11;
+
+    background: url(../images/svg/egg_becon.svg) no-repeat;
+}
+
+.box_images_eat:nth-child(2)::after {
+    content: '';
+    display: block;
+
+    width: 294px;
+    height: 353px;
+
+    position: absolute;
+    bottom: -45px;
+    right: -115px;
+    z-index: 11;
+
+    background: url(../images/svg/buritto.svg) no-repeat;
+}
+
+.title_eat {
+    max-width: 152px;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 25.0926px;
+    line-height: 108.5%;
+    position: absolute;
+    left: 30px;
+    top: 70px;
+ 
+    color: #FFFFFF;
+}
+
+.btn_eat  {
+    width: 204px;
+    height: 38px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    cursor: pointer;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15.3846px;
+    line-height: 108.5%;
+
+    position: absolute;
+    left: 30px;
+    bottom: 30px;
+
+    color: #FFFFFF;
+
+    background: linear-gradient(261.69deg, #FF5D29 12.12%, #FE9C1C 86.72%);
+    border-radius: 32px;
+}
+
+.item_alex {
+    border-radius: 35px;
+}
+
+.block_stonks {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.box_stonks {
+    position: relative;
+    z-index: 12;
+    margin-top: 30px;
+}
+
+.box_stonks:nth-child(1)::before {
+    content: '';
+    display: block;
+
+    width: 200px;
+    height: 225px;
+
+    position: absolute;
+    left: -115px;
+    bottom: -45px;
+    z-index: 13;
+
+    background: url(../images/svg/cofee-icon.svg) no-repeat;
+}
+
+.title_stonks_pizza {
+    max-width: 168px;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 25.0926px;
+    line-height: 108.5%;
+    position: absolute;
+    left: 30px;
+    top: 80px;
+   
+    color: #FFFFFF;
+}
+
+.btn_stonks {
+    width: 204px;
+    height: 38px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    cursor: pointer;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15.3846px;
+    line-height: 108.5%;
+
+    position: absolute;
+    left: 30px;
+    bottom: 30px;
+
+    color: #FFFFFF;
+
+    background: linear-gradient(261.69deg, #FF5D29 12.12%, #FE9C1C 86.72%);
+    border-radius: 32px;
+}
+
+.about {
+    min-height: 90vh;
+    background: #1D0800;
+}
+
+.about_wrapper {
+    width: 75%;
+    margin: 0 auto;
+    padding: 90px 0 0 0;
+}
+
+.box_content_about {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    
+    position: relative;
+    z-index: 15;
+}
+
+.box_content_about::before {
+    content: '';
+    display: block;
+
+    width: 526px;
+    height: 168px;
+
+    position: absolute;
+    left: -100px;
+    top: -15px;
+
+    background: url(../images/svg/text_about_bg.svg) no-repeat;
+}
+
+.box_content_about::after {
+    content: '';
+    display: block;
+
+    width: 526px;
+    height: 168px;
+
+    position: absolute;
+    right: -140px;
+    bottom: 30px;
+    z-index: -15;
+
+    background: url(../images/svg/text_about_bg.svg) no-repeat;
+}
+
+.text_content_about {
+    position: relative;
+}
+
+.text_content_about::before {
+    content: '';
+    display: block;
+
+    width: 105px;
+    height: 37px;
+
+    position: absolute;
+    right: -215px;
+    top: 50%;
+
+    background: url(../images/svg/vector_fast.svg) no-repeat;
+}   
+
+.title_about {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 69.1697px;
+    line-height: 109.5%;    
+    
+    margin-bottom: 20px;
+    
+    color: #FFFFFF;
+}
+
+.icon_img_about {
+    margin-left: -35px
+}
+
+.subtitle_about,
+.description_about {
+    max-width: 459px;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 19.5621px;
+    line-height: 27px;
+
+    color: #A3A3A3;
+}
+
+.description_about {
+    max-width: 420px;
+    margin-top: 20px;
+}
+
+.images_inner_about {
+    position: relative;
+}
+
+.images_inner_about::before {
+    content: '';
+    display: block;
+
+    width: 287px;
+    height: 304px;
+    
+    position: absolute;
+    right: -85px;
+    top: -85px;
+
+    background: url(../images/svg/pizza_icon.svg) no-repeat;
+}
+
+.images_inner_about::after {
+    content: '';
+    display: block;
+
+    width: 299px;
+    height: 309px;
+    
+    position: absolute;
+    left: -95px;
+    bottom: -15px;
+
+    background: url(../images/svg/fries-icon.svg) no-repeat;
+}
+
+.footerNavigation {
+    min-height: 50vh;
+    background: linear-gradient(245.71deg, #170A00 4.96%, #170600 33.7%, #0F0700 68.41%, #170A00 96.42%);
+}
+
+.footerNavigation_wrapper {
+    width: 75%;
+    margin: 0 auto;
+    padding: 50px 130px 0 0;
+}
+
+.block_last {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+
+.block_last_nav,
+.logo_last {
+    margin-right: 30px;
+    margin-top: 20px;
+}
+
+.title_nav_last {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 19.6259px;
+    line-height: 125.68%;
+    letter-spacing: -0.02em;
+    
+    margin-bottom: 18px;
+
+    color: #A3A3A3;
+}
+
+.enumeration_nav {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17.7249px;
+    line-height: 125.68%;
+    letter-spacing: -0.02em;
+    
+    cursor: pointer;
+
+    margin-top: 12px;
+
+    color: #515151;
+    transition: .2s linear;
+}
+
+.enumeration_nav:hover {
+    color: #A3A3A3;
+}
+
+.block1_last {
+    padding: 90px 0 0 0;
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contact {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20.881px;
+    line-height: 125.68%;
+    
+    letter-spacing: -0.02em;
+
+    background: linear-gradient(261.69deg, #FF612E 12.12%, #FFA32B 86.72%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.information {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 15px;
+    margin-top: 10px;
+
+    background: linear-gradient(90deg, #9c1825,#e2745c);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.menu_burger {
+    cursor: pointer;
+}
+
+.navigation_burger {
+    width: 80%;
+    min-height: 100px;
+
+    position: fixed;
+    left: 50%;
+    top: 10%;
+    z-index: 10;
+
+    border-radius: 10px;
+
+    padding: 20px;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.burgerLinkContent {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    height: 50px;
+}
+
+.nav_links {
+    font-family:'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 17.8805px;
+    line-height: 109.5%;
+    text-decoration: none;
+
+    color: #A3A3A3;
+    transition: .2s linear;
+}
+
+.nav_links:hover {
+    color: #FF612E;
+}
+
+
+.none {
+    display: none;
+}
+
+
